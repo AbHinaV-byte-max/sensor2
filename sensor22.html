@@ -1,37 +1,170 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-  < tle>Soil Moisture Monitor</ tle> 
-  <style> 
-    body { 
-      font-family: Arial, sans-serif; 
-      text-align: center; 
-      padding-top: 50px; 
-      background: #f0f0f0; 
-    } 
-    #moisture { 
-      font-size: 48px; 
-      color: green; 
-    } 
-  </style> 
-</head> 
-<body> 
-  <h1>Soil Moisture Level</h1> 
-  <p>Moisture: <span id="moisture">Loading...</span></p> 
- 
-  <script> 
-    async func on fetchMoisture() { 
-      try { 
-        const res = await 
-fetch('h ps://blynk.cloud/external/api/get?token=D_xPZbbnHVg4L6aRZk6kX6mFezZtk2Jy&v0'); 
-        const data = await res.text(); 
-        document.getElementById("moisture").innerText = data + "%"; 
-      } catch (e) { 
-        document.getElementById("moisture").innerText = "Error"; 
-      } 
-    } 
-    fetchMoisture(); 
-    setInterval(fetchMoisture, 2000); // Update every 2 sec 
-  </script> 
-</body> 
+Sadhwi Sargam:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarMitra - A Friend to Every Farmer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="../lan_settings/lang.index.css" />
+</head>
+<body>
+  <div class="animated-bg"></div>
+  
+  <header>
+    <img src="logo.jpg" alt="FarMitra Logo" class="logo" />
+    <div class="title">FarMitra</div>
+    <nav class="nav-options">
+      <a href="index1.html">Home</a>
+      <a href="farmers_survey.html">Survey</a>
+      <a href="Tools_Tech.html">Tools</a>
+      <a href="success_stories.html">Stories</a>
+      <a href="ContactUS.html">Contact</a>
+      <a href="https://forecast7.com/en/12d9777d59/bengaluru/">Weather</a>
+    </nav>
+    <div class="header-right-options">
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙 Dark Mode</button>
+
+  <select id="languageSelect" title="Select Language">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="knd">Kannada</option>
+    <option value="fr">Tamil</option>
+    <option value="zh">Telugu</option>
+    <!-- Add more languages as needed -->
+  </select>
+
+</div>
+
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+      <div class="text-section">
+        <div class="goal">Mission to stand beside every farmer and make a movement to new age of farming.</div>
+        <p class="description">
+          <strong>Farmitra:</strong> It's a website that makes farming easier by introducing smart tools, stories,
+          updates and most importantly trust — which helps to let you know whether your crop is healthy or not.
+          So make Farmitra your mitra!!
+        </p>
+        <button class="cta-button">Get Started</button>
+      </div>
+      <div class="image-section">
+        <img src="crops.gif" alt="Crops GIF" class="side-gif" />
+      </div>
+    </div>  
+    <!-- end of content wrapper -->
+
+  <section class="survey-section" id="survey">
+  <h2 class="survey-heading">Why Farmer's Survey Matters</h2>
+  <p class="survey-description">
+    Every farm is different. To truly help, we need to understand your unique needs, challenges, and goals.
+    This survey helps us gather essential data directly from farmers — like you — so we can build tools, updates, and services that actually work in your fields. 
+    Your voice guides our innovation.
+  </p>
+  <a href="farmers_survey.html" class="survey-button">Take the Farmer's Survey</a>
+  </section>
+  
+
+    <div class="button-grid">
+        <a href="Dashboardicon.jpg" class="image-button">
+          <img src="Dashboardicon.jpg" alt="Dashboard" />
+        </a>
+        <a href="../Sensors/sensor3.html" class="image-button">
+          <img src="CropMonitoringIcon.jpg" alt="Crop Monitoring" />
+        </a>
+        <a href="Knowledge_centre.html" class="image-button">
+          <img src="KnowledgeCentreIcon.jpg" alt="Knowledge Centre" />
+        </a>
+        <a href="BhoomiAI.html" class="image-button">
+          <img src="BhoomiAIIcon.jpg" alt="Ask Bhoomi AI" />
+        </a>
+
+<!-- Hidden popup for input -->
+<div id="bhoomiPopup" style="display:none; position:fixed; top:30%; left:30%; background:#111; padding:20px; border-radius:10px; box-shadow:0 0 20px #fff; color:white;">
+  <h3>Ask Bhoomi AI 🌾</h3>
+  <input type="text" id="farmerQuestion" placeholder="Type your question..." style="width:90%;" />
+  <button onclick="askBhoomi()">Ask</button>
+  <p id="response"></p>
+</div>
+
+      </div>
+      
+     <div class="additional-options">
+  <a href="../public/index2.html" class="option-button">Customer Portal</a>
+  <a href="Tutorials.html" class="option-button">Video & Demo Tutorials</a>
+  <a href="success_stories.html" class="option-button">Success Stories of Farmers</a>
+  <a href="ContactUS.html" class="option-button">Contact & Feedback</a>
+</div>
+
+<body>
+
+<h1>Agriculture Technology Videos</h1>
+
+<div class="video-grid">
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/wUBxcXSM6wc" title="farmer using drones for surveillance" allowfullscreen></iframe>
+    <div class="video-title">farmer using drones for surveillance</div>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/GbCDTDJ3IRs" title="automated vehicles" allowfullscreen></iframe>
+    <div class="video-title">automated vehicles</div>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/6Ui9PATE8S4" title="another type of automated vehicles" allowfullscreen></iframe>
+    <div class="video-title">another type of automated vehicles</div>
+  </div>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/pY_9TxAg95M" title="Introduction of IOT in agriculture" allowfullscreen></iframe>
+    <div class="video-title">Introduction of IOT in agriculture</div>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/hXUP4j4jsEM" title="automated weeding robot" allowfullscreen></iframe>
+    <div class="video-title">automated weeding robot</div>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/v8soeX3iWNA" title="soil digging machines" allowfullscreen></iframe>
+    <div class="video-title">soil digging machines</div>
+  </div>
+
+  <!-- The 12th video is missing from your list, if you want, add it here -->
+</div>
+
+<script>
+  document.getElementById("darkModeToggle").addEventListener("click", function () {
+    window.location.href = "../DarkMode/exp_dark.html";
+  });
+
+    // 🌾 Open Bhoomi AI popup
+  function openBhoomiPopup() {
+    document.getElementById("bhoomiPopup").style.display = "block";
+  }
+
+  // 💬 Ask Bhoomi AI
+  async function askBhoomi() {
+    const question = document.getElementById("farmerQuestion").value;
+    const res = await fetch("/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question }),
+    });
+    const data = await res.json();
+    document.getElementById("response").innerText = data.reply;
+  }
+
+document.getElementById("languageSelect").addEventListener("change", function () {
+  const selectedLang = this.value;
+  const currentURL = window.location.href;
+  const translateURL = https://translate.google.com/translate?hl=en&sl=auto&tl=${selectedLang}&u=${encodeURIComponent(currentURL)};
+  window.open(translateURL, "_blank");
+});
+
+</script>
+
+</body>
+
 </html>
